@@ -1,0 +1,55 @@
+.DS_Store
+.DS_Store?
+._*
+
+/tmp
+/dist
+/node_modules
+/bower_components
+/coverage
+
+# misc
+/.cache
+.cache
+.cache/
+.cache/*
+/.cache/*
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+*.iml
+.idea
+/.idea
+.idea/UI-X.iml
+*.lnk
+ebuild.bat
+jest_0/
+
+fiserve.code-workspace
+.vscode/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

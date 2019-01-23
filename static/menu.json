@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Accounts",
+    "path": "/accounts/"
+  },
+  {
+    "name": "Transfers and Pay",
+    "path": "/transfers/"
+  },
+  {
+    "name": "Spending",
+    "path": "/spending/"
+  },
+  {
+    "name": "Message Center",
+    "path": "/messages/"
+  },
+  {
+    "name": "Customer Support",
+    "path": "/support/"
+  }
+]
