@@ -21,8 +21,8 @@ const LoadableTwo = Loadable({
 });
 
 export default class Display extends React.Component {
-	constructor () {
-		super();
+	constructor (p) {
+		super(p);
 		loadCopiedFile();
 	}
 	render () {
@@ -35,8 +35,6 @@ export default class Display extends React.Component {
 		);
 	}
 }
-
-
 
 function loadCopiedFile () {
 	const s = document.createElement('script');
