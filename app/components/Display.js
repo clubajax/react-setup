@@ -1,4 +1,4 @@
-import React from 'vendors';
+import React from 'react';
 import Loadable from 'react-loadable';
 
 function Loading(props) {
@@ -40,6 +40,6 @@ export default class Display extends React.Component {
 
 function loadCopiedFile () {
 	const s = document.createElement('script');
-	s.src = '/file-to-copy.js';
+	s.src = '/files-dev/file-to-copy.js';
 	document.documentElement.children[0].appendChild(s);
 }

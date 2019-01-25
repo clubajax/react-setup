@@ -5,7 +5,13 @@ module.exports = {
     dev_server: 'localhost:3000',
     projectFolder: '/app',
     projectIndex: 'index.js',
-    projectHTML: 'index.html',
+    projectHTML: 'index.tmpl.html',
     projectDist: '/dist',
-    babelizeNodeModules: '/stories,storybook'
+    babelizeNodeModules: '/stories,storybook',
+    polyfiles: ['whatwg-fetch', '@babel/polyfill'],
+    copy: {
+        common: 'static',
+        dev: 'files-dev',
+        prod: 'files-prod'
+    }
 };

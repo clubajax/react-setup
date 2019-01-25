@@ -3,7 +3,7 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ProgressPlugin = require('webpack/lib/ProgressPlugin');
 const { StatsWriterPlugin } = require('webpack-stats-plugin');
-const defaults = require('./defaults');
+const settings = require('./settings');
 
 let modern;
 let legacy;
@@ -11,15 +11,15 @@ let legacy;
 module.exports = function htmlConfig (isProd, ROOT, cleanDist, plugins) {
 
     function buildHtml () {
-        const dist = path.join(ROOT, defaults.projectDist, defaults.projectHTML);
-        const indexFile = path.join(ROOT, defaults.projectFolder, defaults.projectHTML);
+        const dist = path.join(ROOT, settings.projectDist, 'index.html');
+        const indexFile = path.join(ROOT, settings.projectFolder, settings.projectHTML);
         const cssFile = modern.modern.find(f => /\.css/.test(f));
         const cssNode = `<link rel="stylesheet" href="${cssFile}" />\n</head>`;
 
         // Access of an asset this way could be brittle. Not sure of the different permutations.
         // see examples below.
-        console.log('\n\nmodern\n', JSON.stringify(modern, 0, 4));
-        console.log('\nlegacy\n', JSON.stringify(legacy, 0, 4));
+        console.log('\n\nmodern\n', JSON.stringify(modern, null, 4));
+        console.log('\nlegacy\n', JSON.stringify(legacy, null, 4));
 
         const modernVendorItem = modern[Object.keys(modern)[1]];
         const legacyVendorItem = legacy[Object.keys(legacy)[1]];
@@ -48,7 +48,7 @@ module.exports = function htmlConfig (isProd, ROOT, cleanDist, plugins) {
     if (!isProd) {
         const html = new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'index.html'
+            template: settings.projectHTML
         });
         plugins.push(html);
         return;

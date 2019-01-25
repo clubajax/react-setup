@@ -1,7 +1,7 @@
-const defaults = require('./defaults');
+const settings = require('./settings');
 
 module.exports = function server (ROOT) {
-    let api = process.env.API === 'dev' ? defaults.dev_server : process.env.API === 'local' ? defaults.local_server : process.env.API;
+    let api = process.env.API === 'dev' ? settings.dev_server : process.env.API === 'local' ? settings.local_server : process.env.API;
 
 
     if (!/http/.test(api)) {

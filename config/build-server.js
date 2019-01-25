@@ -1,11 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
-const defaults = require('./defaults');
+const settings = require('./settings');
 // this file used for testing builds on localhost
 
-const BASE_URL = defaults.dev_server;
-const PORT = defaults.testBuildPort;
+const BASE_URL = settings.dev_server;
+const PORT = settings.testBuildPort;
 const defaultHeaders = {
     connection: 'keep-alive',
     Connection: 'keep-alive',

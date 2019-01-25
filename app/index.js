@@ -1,7 +1,7 @@
-import { React, ReactDom } from 'vendors';
+import React from 'react';
+import ReactDom from 'react-dom';
 import Display from './components/Display';
 import './styles/main.scss';
-// import 'ui-shared/ui/icons/trash';
 
 const renderApp = (Component) => {
 	ReactDom.render(

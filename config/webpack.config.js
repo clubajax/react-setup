@@ -19,7 +19,8 @@ if (!isProd) {
 function makeConfig (isLegacy, cleanDist) {
     const appFile = `./${settings.projectIndex}`;
     // for legacy, inject polyfills before app code
-    const appFiles = isLegacy ? ['whatwg-fetch', '@babel/polyfill', appFile] : [appFile];
+    const legacyPolyfills = settings.polyfills || [];
+    const appFiles = isLegacy ? [...legacyPolyfills, appFile] : [appFile];
     const entryName = isProd ? isLegacy ? 'legacy' : 'modern' : settings.appName;
     const outputPath = path.join(ROOT, settings.projectDist);
     const css = cssModule(isProd, isLegacy);

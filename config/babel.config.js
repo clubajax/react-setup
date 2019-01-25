@@ -1,8 +1,8 @@
 const path = require('path');
-const defaults = require('./defaults');
+const settings = require('./settings');
 
-const { appName } = defaults;
-const libs = `${appName},${defaults.babelizeNodeModules}`.split(',');
+const { appName } = settings;
+const libs = `${appName},${settings.babelizeNodeModules}`.split(',');
 const libsToBabelize = new RegExp(libs.filter(lib => lib.indexOf(appName) === -1).join('|'));
 
 module.exports = (isProd, isLegacy, ROOT) => {

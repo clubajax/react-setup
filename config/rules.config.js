@@ -1,6 +1,6 @@
 
 const babelConfig = require('./babel.config');
-const defaults = require('./defaults');
+const settings = require('./settings');
 
 module.exports = (isProd, isLegacy, ROOT) => {
     const babel = babelConfig(isProd, isLegacy, ROOT);
@@ -10,7 +10,7 @@ module.exports = (isProd, isLegacy, ROOT) => {
         loader: 'file-loader',
         options: {
             name: '[name].[ext]',
-            context: `${ROOT}${defaults.projectFolder}`
+            context: `${ROOT}${settings.projectFolder}`
         }
     };
 

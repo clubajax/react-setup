@@ -1,4 +1,4 @@
-import React from 'vendors';
+import React from 'react';
 
 import '../styles/LazyTwo.scss';
 

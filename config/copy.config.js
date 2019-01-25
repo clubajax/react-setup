@@ -1,38 +1,27 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const settings = require('./settings');
 
+const ROOT = `${__dirname}/..`;
+const path = require('path');
+function get (file) {
+    return path.join(ROOT, file);
+}
 module.exports = function plugins (isProd) {
-    const devFiles = [
-        {
-            from: '../dev-data',
-            to: 'dev-data'
-        }
-    ];
-
-    const commonFiles = [
-        {
-            from: '../node_modules/@clubajax/promise-polyfill/index.js',
-            to: 'promise-polyfill.js'
-        }, {
-            from: '../public',
-            to: 'public'
-        }, {
-            from: '../public/logo-first-financial.svg',
-            to: 'logo-first-financial.svg'
-        }
-    ];
-
-    const prodFiles = [
-        {
-            from: '../dev-data',
-            to: 'dev-data'
-        }
-    ];
 
     let files = [];
-    if (isProd) {
-        files = [...commonFiles, ...prodFiles];
-    } else {
-        files = [...commonFiles, ...devFiles];
+
+    if (settings.copy) {
+
+        const common = !settings.copy.common ? [] : [{ from: get(settings.copy.common), to: settings.copy.common }];
+        const prod = !settings.copy.prod ? [] : [{ from: get(settings.copy.prod), to: settings.copy.prod }];
+        const dev = !settings.copy.dev ? [] : [{ from: get(settings.copy.dev), to: settings.copy.dev }];
+
+        if (isProd) {
+            files = [...common, ...prod];
+        } else {
+            files = [...common, ...dev];
+        }
     }
+
     return new CopyWebpackPlugin(files, { debug: 'info' });
 };
