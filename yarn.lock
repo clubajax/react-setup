@@ -1059,11 +1059,6 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@clubajax/promise-polyfill@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@clubajax/promise-polyfill/-/promise-polyfill-1.0.1.tgz#9bee17ecf75d739079ac6c54b1d32f4674c2b01a"
-  integrity sha1-m+4X7Pddc5B5rGxUsdMvRnTCsBo=
-
 "@emotion/cache@^0.8.8":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-0.8.8.tgz#2c3bd1aa5fdb88f1cc2325176a3f3201739e726c"
